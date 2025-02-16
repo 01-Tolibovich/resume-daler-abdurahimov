@@ -1,0 +1,11 @@
+@import "./variables.scss";
+
+body {
+    color: $text-color;
+}
+
+.container {
+    max-width: 794px;
+    margin: 0 auto;
+    box-shadow: 0 0 6px 0 $border-color;
+}

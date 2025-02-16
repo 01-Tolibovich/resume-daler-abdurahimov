@@ -1,0 +1,62 @@
+@import "../../styles/variables.scss";
+
+.work-history {
+    margin: 50px 16px;
+
+    .experience {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $primary-color;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    .work-expiriens {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 16px;
+
+        .period {
+            h3 {
+                font-size: 16px;
+            }
+
+            .year {
+                font-weight: 500;
+            }
+        }
+
+        .discriptoin {
+            border-left: 1px dashed $border-color;
+            font-size: 14px;
+
+            li {
+                margin: 8px 0;
+                font-size: 13px;
+            }
+        }
+
+        .full-width {
+            grid-column: 1/3;
+            border: 1px solid $border-color;
+            border-top: none;
+            border-radius: 0 0 32px 32px;
+            padding: 16px;
+            padding-top: 0;
+            box-shadow: 0px 8px 7px -5px $border-color;
+
+            h4, p {
+                margin: 0;
+            }
+
+            .items {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+        }
+    }
+}
