@@ -1,43 +1,23 @@
 import Image from "next/image";
 import photo from "../public/images/daler.jpg";
 import { GiSkills } from "react-icons/gi";
+import { WorkHistory } from "./components";
+import { educations, primaryData } from "./data/en";
+import { BsFillMortarboardFill } from "react-icons/bs";
 
-import "./styles.scss"
-import { WorkHistory } from "./components/workHistory";
+import "./styles.scss";
 
 export default function Home() {
-  const skills = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "NextJS",
-    "Redux",
-    "Zustand",
-    "Vue",
-    "NuxtJS",
-    "REST API",
-    "HTML",
-    "CSS",
-    "SASS",
-    "TailwindCSS",
-    "Bootstrap",
-    "StyledComponents",
-    "Git",
-    "WordPress",
-    "Figma",
-    "Photoshop"
-  ]
-
   return (
     <div>
       <header className="header">
         <div className="main-info">
           <div className="photo-block">
-            <Image src={photo} width={100} height={100} alt="photo" />
+            <Image src={photo} width={500} height={500} alt="photo" />
           </div>
           <div className="primary-info">
-            <h1>ДАЛЕР АБДУРАХИМОВ</h1>
-            <h2>Frontend разработчик</h2>
+            <h1>{`${primaryData.user.firstName} ${primaryData.user.lastName}`}</h1>
+            <h2>{primaryData.position.first}</h2>
           </div>
           <div />
         </div>
@@ -46,10 +26,10 @@ export default function Home() {
         <section className="skils">
           <div className="skils-heading">
             <GiSkills className="icon" />
-            <h3>Навыки:</h3>
+            <h3>{primaryData.slill}:</h3>
           </div>
           <div className="skills">
-            {skills.map(skill => (
+            {primaryData.skills.map((skill) => (
               <div key={Math.random()} className="skill">
                 <p>{skill}</p>
               </div>
@@ -58,7 +38,18 @@ export default function Home() {
         </section>
         <WorkHistory />
       </main>
-      <footer></footer>
-    </div >
+      <footer className="content footer">
+        <div className="educations">
+          <BsFillMortarboardFill className="icon" />
+          <h3>{educations.title}</h3>
+        </div>
+        <h4>{educations.desc}:</h4>
+        <div className="edu-items">
+          {educations.items.map((item) => (
+            <small key={Math.random()}>{item}</small>
+          ))}
+        </div>
+      </footer>
+    </div>
   );
 }

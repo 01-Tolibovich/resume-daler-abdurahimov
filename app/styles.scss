@@ -3,102 +3,127 @@
 $radius: 8px;
 
 @mixin headInfo() {
-    padding: 16px;
-    background-color: #fff;
+  padding: 16px;
+  background-color: #fff;
 }
 
 .header {
-    background-color: #1a1a1a;
-    background-image: url(../public/images/Coding.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding: 0 32px;
+  background-color: #1a1a1a;
+  background-image: url(../public/images/Coding.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 0 32px;
 
-    .main-info {
-        display: grid;
-        grid-template-columns: auto auto 1fr;
-        border-radius: $radius;
-        transform: translateY(50%);
-        backdrop-filter: blur(5px);
-        box-shadow: 0px 0px 6px 0px $border-color;
-        border: 1px solid $border-color;
+  .main-info {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    border-radius: $radius;
+    transform: translateY(50%);
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 6px 0px $border-color;
+    border: 1px solid $border-color;
 
-        .photo-block {
-            @include headInfo();
+    .photo-block {
+      @include headInfo();
 
-            border-radius: $radius 0 0 $radius;
+      border-radius: $radius 0 0 $radius;
 
-            img {
-                border-radius: $radius / 2;
-                transform: scale(1.7) translate(20px, -20px);
-            }
-        }
-
-        .primary-info {
-            @include headInfo();
-
-            padding-left: 64px;
-            border-radius: 0 $radius $radius 0;
-
-            h1 {
-                font-size: 24px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-
-        }
+      img {
+        border-radius: $radius / 2;
+        width: 100px;
+        height: 100px;
+        transform: scale(1.7) translate(20px, -20px);
+      }
     }
+
+    .primary-info {
+      @include headInfo();
+
+      padding-left: 64px;
+      border-radius: 0 $radius $radius 0;
+
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 20px;
+        color: $primary-color;
+      }
+    }
+  }
 }
 
 .content {
-    margin: 100px 16px 0 16px;
+  margin: 100px 16px 0 16px;
 
-    .skils {
-        border-top: 1px dashed $border-color;
-        border-bottom: 1px dashed $border-color;
-        border-left: none;
-        border-right: none;
-        display: grid;
-        grid-template-columns: 160px 1fr;
-        gap: 16px;
-        padding: 16px;
+  .skils {
+    border-top: 1px dashed $border-color;
+    border-bottom: 1px dashed $border-color;
+    border-left: none;
+    border-right: none;
+    display: grid;
+    grid-template-columns: 146px 1fr;
+    gap: 16px;
+    padding: 16px;
 
-        .skils-heading {
-            border-right: 1px dashed $border-color;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: $primary-color;
+    .skils-heading {
+      border-right: 1px dashed $border-color;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: $primary-color;
 
-            h3 {
-                margin: 0;
-            }
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-
-            .skill {
-                // display: flex;
-
-            }
-
-            p {
-                margin: 0;
-                background-color: #e9e9e9;
-                padding: 4px;
-                font-weight: 600;
-            }
-        }
+      h3 {
+        margin: 0;
+      }
     }
 
-    .icon {
-        font-size: 24px;
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      .skill {
+        p {
+          margin: 0;
+          background-color: #e9e9e9;
+          padding: 4px;
+          font-weight: 600;
+          font-size: 14px;
+        }
+      }
     }
+  }
+}
+
+.footer {
+    margin-top: -30px;
+  .educations {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: $primary-color;
+
+    h3 {
+      margin: 0;
+    }
+  }
+
+  .edu-items {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+
+    small {
+      background-color: #e9e9e9;
+      padding: 4px;
+    }
+  }
+}
+
+.icon {
+  font-size: 24px;
 }
